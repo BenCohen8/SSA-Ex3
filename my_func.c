@@ -99,6 +99,7 @@ int trans(char* azby,char* word,int wordlen)
 }
 int f1(char* txt,int size,int sizetxt)
 {
+	int firstime=1;
 	int i=0;
 	int j=0;
 	int s=0;
@@ -122,6 +123,7 @@ int f1(char* txt,int size,int sizetxt)
 		}
 		if(mat[0][i]==size)
 		{
+			firstime=0;
 			for(j=0;j<=i;j++)
 			{
 				printf("%c",*(txt+j));
@@ -141,14 +143,26 @@ int f1(char* txt,int size,int sizetxt)
 		{
 			if(mat[i][j]==size&&mat[i][i]!=0)
 			{
-				printf("~");
-				for(int j1=i;j1<=j;j1++)
+				if(firstime)
 				{
-					if(mat[i][j1]>0){
-						printf("%c",*(txt+j1));
+					firstime=0;
+					for(int j1=i;j1<=j;j1++)
+					{
+						if(mat[i][j1]>0){
+							printf("%c",*(txt+j1));
+						}
+					}
+					j=sizetxt;
+				}else
+				{
+					printf("~");
+					for(int j1=i;j1<=j;j1++)
+					{
+						if(mat[i][j1]>0){
+							printf("%c",*(txt+j1));
+						}
 					}
 				}
-				j=sizetxt;
 			}		
 		}
 	}
@@ -287,6 +301,5 @@ int f3(char*txt,char* word,int wordlen,int txtlen)
 	free(check2);
 	free(check3);
 	free(sortword);
-	printf("\n");
 	return 0;	
 }
