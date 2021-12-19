@@ -45,7 +45,7 @@ int main()
 	trans(azby1,trans1,wordlen);
 	printf("Atbash Sequences: ");
 	f2(txt,azby1,trans1,txtlen,wordlen);
-	printf("Anagram Sequences:");
+	printf("Anagram Sequences: ");
 	f3(txt,word,wordlen,txtlen);
 	free(word);
 	free(txt);
