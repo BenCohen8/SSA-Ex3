@@ -1,7 +1,7 @@
 WALL= -Wall -g
 CC=gcc
 
-all:libclassfunc.a connections
+all:libclassfunc.a stringProg
 stringProg: main.o libclassfunc.a
 	$(CC) $(WALL) -o stringProg main.o libclassfunc.a
 
