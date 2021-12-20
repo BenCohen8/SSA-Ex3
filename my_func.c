@@ -121,14 +121,6 @@ int f1(char* txt,int size,int sizetxt)
 		{
 			mat[0][i]=mat[0][i-1];
 		}
-		if(mat[0][i]==size)
-		{
-			firstime=0;
-			for(j=0;j<=i;j++)
-			{
-				printf("%c",*(txt+j));
-			}
-		}
 	}
 	for( i=1;i<sizetxt;i++)
 	{
@@ -137,7 +129,7 @@ int f1(char* txt,int size,int sizetxt)
 			mat[i][j]=mat[i-1][j]-mat[i-1][i-1];		
 		}
 	}
-		for( i=1;i<sizetxt;i++)
+	for( i=0;i<sizetxt;i++)
 	{
 		for( j=i;j<sizetxt;j++)
 		{
@@ -162,6 +154,7 @@ int f1(char* txt,int size,int sizetxt)
 							printf("%c",*(txt+j1));
 						}
 					}
+					j=sizetxt;
 				}
 			}		
 		}
@@ -267,7 +260,7 @@ int f3(char*txt,char* word,int wordlen,int txtlen)
 		{
 			if(countword<wordlen)
 			{
-				if(*(txt+i)!=','&&*(txt+i)!='\t'&&*(txt+j)!='\n')
+				if(*(txt+i)!=','&&*(txt+i)!='\t'&&*(txt+i)!='\n'&&*(txt+i)!='.')
 				{
 					*(check2+coupoi++)=*(txt+j);
 					*(check3+countword++)=*(txt+j);

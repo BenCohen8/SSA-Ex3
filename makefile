@@ -13,4 +13,4 @@ main.o:main.c my_func.h
 	$(CC) $(WALL) -c main.c
 	
 clean: 
-	rm -f *.o *.a ./connections
+	rm -f *.o *.a ./stringProg
